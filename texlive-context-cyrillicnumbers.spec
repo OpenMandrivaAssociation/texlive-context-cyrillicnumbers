@@ -1,6 +1,6 @@
 Name:		texlive-context-cyrillicnumbers
 Version:	47085
-Release:	1
+Release:	2
 Summary:	Write numbers as cyrillic glyphs
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/context/contrib/context-cyrillicnumbers
