@@ -3,7 +3,7 @@ Version:	47085
 Release:	2
 Summary:	Write numbers as cyrillic glyphs
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/context/contrib/context-cyrillicnumbers
+URL:		https://www.ctan.org/tex-archive/macros/context/contrib/context-cyrillicnumbers
 License:	BSD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/context-cyrillicnumbers.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/context-cyrillicnumbers.doc.r%{version}.tar.xz
