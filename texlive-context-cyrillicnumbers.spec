@@ -1,42 +1,23 @@
-Name:		texlive-context-cyrillicnumbers
-Version:	47085
-Release:	2
+%global tl_name context-cyrillicnumbers
+%global tl_revision 47085
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Write numbers as cyrillic glyphs
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/context/contrib/context-cyrillicnumbers
-License:	BSD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/context-cyrillicnumbers.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/context-cyrillicnumbers.doc.r%{version}.tar.xz
+License:	bsd
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/context-cyrillicnumbers.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/context-cyrillicnumbers.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
-Requires(post):	texlive-context
+%texlive_base_requires
+Requires:	texlive(context)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package extends Context's system of number conversion, by
-adding numeration using cyrillic letters.
+The package extends ConTeXt's system of number conversion, by adding
+numeration using cyrillic letters.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/context/interface/third/t-cyrillicnumbers.xml
-%{_texmfdistdir}/tex/context/third/cyrillicnumbers
-%doc %{_texmfdistdir}/doc/context/third/cyrillicnumbers
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
